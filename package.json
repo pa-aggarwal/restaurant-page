@@ -1,0 +1,20 @@
+{
+    "name": "restaurant",
+    "version": "1.0.0",
+    "description": "A mock restaurant homepage for the ice cream parlour in Stranger Things.",
+    "private": true,
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack",
+        "watch": "webpack --watch"
+    },
+    "author": "Priya Aggarwal",
+    "license": "MIT",
+    "devDependencies": {
+        "webpack": "^5.88.1",
+        "webpack-cli": "^5.1.4"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^6.4.0"
+    }
+}
