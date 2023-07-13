@@ -6,13 +6,16 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "webpack",
-        "watch": "webpack --watch"
+        "watch": "webpack --watch",
+        "server": "webpack serve --open"
     },
     "author": "Priya Aggarwal",
     "license": "MIT",
     "devDependencies": {
+        "html-webpack-plugin": "^5.5.3",
         "webpack": "^5.88.1",
-        "webpack-cli": "^5.1.4"
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^4.15.1"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^6.4.0"
