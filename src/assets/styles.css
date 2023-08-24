@@ -1,0 +1,70 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.navbar__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar__item:not(:last-child) {
+    margin-right: 4rem;
+}
+
+.navbar__logo {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.navbar__logo .logo-icon {
+    display: block;
+}
+
+.hero__container {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("../images/restaurant.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top 10% center;
+    color: white;
+    padding: 3rem;
+}
+
+.hero__text {
+    text-align: center;
+    margin: 25vh auto;
+    max-width: max(40%, 600px);
+}
+
+.hero__container h1 {
+    font-size: 5rem;
+    margin: 1.5rem 0;
+}
+
+.hero__container h3 {
+    font-size: 2.5rem;
+}
+
+.hero__container p {
+    font-size: 2rem;
+}
