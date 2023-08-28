@@ -15,6 +15,8 @@ h1, h2, h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 auto;
+    max-width: 120rem;
     text-transform: uppercase;
     font-size: 2rem;
 }
@@ -32,7 +34,7 @@ h1, h2, h3 {
 
 .navbar__logo {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .navbar__logo .logo-icon {
@@ -40,29 +42,51 @@ h1, h2, h3 {
 }
 
 .hero__container {
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 3rem 5rem;
+}
+
+.home .hero__container {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url("../images/restaurant.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
     background-position: top 10% center;
-    color: white;
-    padding: 3rem;
+}
+
+.about .hero__container {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("../images/staff-01.jpg");
+}
+
+.menu .hero__container {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("../images/ice-cream-menu.jpg");
+    background-position: top 50% center;
+}
+
+.contact .hero__container {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("../images/starcourt-mall.jpg");
 }
 
 .hero__text {
     text-align: center;
     margin: 25vh auto;
-    max-width: max(40%, 600px);
+    max-width: max(50%, 600px);
 }
 
 .hero__container h1 {
-    font-size: 5rem;
+    font-size: 6rem;
     margin: 1.5rem 0;
 }
 
 .hero__container h3 {
-    font-size: 2.5rem;
+    font-size: 3rem;
 }
 
 .hero__container p {
