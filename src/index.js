@@ -9,8 +9,8 @@ const container = document.getElementById("content");
 
 const homeDescription =
     "A nautical-themed ice cream parlour located in Starcourt Mall " +
-    "of Hawkins, Indiana. We offer dozens of unique flavours as " +
-    "well as limited edition flavours only available at this location.";
+    "of Hawkins, Indiana. We offer dozens of unique and " +
+    "limited edition flavours only available at this location.";
 
 const tabPages = {};
 tabPages[tabIDs.home] = new HomePage(homeDescription);
