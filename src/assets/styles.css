@@ -115,7 +115,7 @@ figure {
 }
 
 .parlour__container {
-    padding: 10rem var(--section-padding-x);
+    padding: 15rem var(--section-padding-x);
     text-align: center;
 }
 
@@ -151,6 +151,65 @@ figure {
     grid-column: -2;
 }
 
+.discover__container {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url("../images/nautical-background.jpg");
+    padding: 10rem var(--section-padding-x);
+}
+
+.discover__content {
+    background-color: rgba(255, 255, 255, 0.85);
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    padding: 6rem;
+    margin: 0 auto;
+    max-width: 110rem;
+}
+
+.discover__text {
+    text-align: right;
+}
+
+.discover__heading {
+    font-size: 5rem;
+}
+
+.discover__special {
+    display: block;
+    line-height: 0.6;
+    font-size: 0.85em;
+}
+
+.discover__container .gallery {
+    display: flex;
+    gap: 2rem;
+    position: relative;
+    max-width: 57rem;
+}
+
+.discover__container .gallery__column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 3rem;
+}
+
+.discover__container .gallery__column:nth-child(1) {
+    position: relative;
+    bottom: 20px;
+}
+
+.discover__container .gallery__column:nth-child(2) {
+    position: relative;
+    top: 20px;
+}
+
+.discover__container .gallery__item {
+    height: 50%;
+}
+
 @media screen and (max-width: 1300px) {
     .parlour__container .gallery {
         grid-template-rows: none;
@@ -169,3 +228,14 @@ figure {
         order: 4;
     }
 }
+
+@media screen and (max-width: 1100px) {
+    .discover__content {
+        flex-direction: column;
+    }
+
+    .discover__text {
+        text-align: center;
+        max-width: min(600px, 100%);
+    }
+} 

@@ -3,6 +3,10 @@ import IceCream1 from "./images/ice-cream-01.jpg";
 import IceCream2 from "./images/ice-cream-02.jpg";
 import IceCream3 from "./images/ice-cream-03.jpg";
 import IceCream4 from "./images/ice-cream-04.jpg";
+import IceCream5 from "./images/ice-cream-05.jpg";
+import IceCream6 from "./images/ice-cream-06.jpg";
+import IceCream7 from "./images/ice-cream-07.jpg";
+import IceCream8 from "./images/ice-cream-08.jpg";
 
 export class HomePage {
     /**
@@ -21,8 +25,12 @@ export class HomePage {
         this.parlourSection = document.createElement("section");
         this.parlourSection.classList.add("parlour__container");
 
+        this.discoverSection = document.createElement("section");
+        this.discoverSection.classList.add("discover__container");
+
         this.addHeroContent();
         this.addParlourContent();
+        this.addDiscoverContent();
     }
 
     addHeroContent() {
@@ -69,6 +77,42 @@ export class HomePage {
 
         this.parlourSection.insertAdjacentHTML("beforeend", content);
         this.container.appendChild(this.parlourSection);
+    }
+
+    addDiscoverContent() {
+        const content = `
+            <div class="discover__content">
+                <div class="discover__text">
+                    <h2 class="discover__heading">
+                        <span class="discover__special">Discover </span>Our Menu
+                    </h2>
+                    <p class="discover__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis ex mauris. 
+                    Nullam justo risus, pellentesque eu elementum ut, pretium ac orci. Ut eget nunc posuere neque commodo aliquam. 
+                    Vivamus commodo congue augue, at imperdiet justo ullamcorper vel.</p>
+                    <button class="discover__button">View Full Menu</button>
+                </div>
+                <div class="gallery">
+                    <div class="gallery__column">
+                        <figure class="gallery__item">
+                            <img src="${IceCream5}" alt="Ice cream scoop">
+                        </figure>
+                        <figure class="gallery__item">
+                            <img src="${IceCream6}" alt="Ice cream with waffle inside cup">
+                        </figure>
+                    </div>
+                    <div class="gallery__column">
+                        <figure class="gallery__item">
+                            <img src="${IceCream7}" alt="Ice cream with American flag and decorations">
+                        </figure>
+                        <figure class="gallery__item">
+                            <img src="${IceCream8}" alt="Demogorgan-inspired strawberry ice cream">
+                        </figure>
+                    </div>
+                </div>
+            </div>`;
+
+        this.discoverSection.insertAdjacentHTML("beforeend", content);
+        this.container.appendChild(this.discoverSection);
     }
 
     /**
