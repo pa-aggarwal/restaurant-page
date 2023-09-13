@@ -1,3 +1,4 @@
+import { Carousel } from "./carousel";
 import { getCompanyLogo, getLogoIcon } from "./logo";
 import IceCream1 from "./images/ice-cream-01.jpg";
 import IceCream2 from "./images/ice-cream-02.jpg";
@@ -7,6 +8,9 @@ import IceCream5 from "./images/ice-cream-05.jpg";
 import IceCream6 from "./images/ice-cream-06.jpg";
 import IceCream7 from "./images/ice-cream-07.jpg";
 import IceCream8 from "./images/ice-cream-08.jpg";
+import Customer1 from "./images/customer-01.jpg";
+import Customer2 from "./images/customer-02.jpg";
+import Customer3 from "./images/customer-03.jpg";
 
 export class HomePage {
     /**
@@ -28,9 +32,13 @@ export class HomePage {
         this.discoverSection = document.createElement("section");
         this.discoverSection.classList.add("discover__container");
 
+        this.customerSection = document.createElement("section");
+        this.customerSection.classList.add("customer__container");
+
         this.addHeroContent();
         this.addParlourContent();
         this.addDiscoverContent();
+        this.addCustomerContent();
     }
 
     addHeroContent() {
@@ -113,6 +121,44 @@ export class HomePage {
 
         this.discoverSection.insertAdjacentHTML("beforeend", content);
         this.container.appendChild(this.discoverSection);
+    }
+
+    addCustomerContent() {
+        const carousel = new Carousel();
+        const blockName = carousel.getSlideBlockName();
+
+        function getSlideContent(slideTitle, slideImage) {
+            return `
+                <div class="${blockName}__photo">
+                    <img src="${slideImage}" alt="Scoops Ahoy customer">
+                </div>
+                <div class="${blockName}__text">
+                    <blockquote class="${blockName}__quote">
+                        <p>I have been visiting Scoops Ahoy for over a year now and I love it! I can't imagine life without
+                        their amazing ice cream. It's the best, and the customer service is great.</p>
+                    </blockquote>
+                    <span class="${blockName}__title">${slideTitle}</span>
+                </div>`;
+        }
+
+        const customerSlides = [
+            getSlideContent("Erica Sinclair", Customer1),
+            getSlideContent("Jane Hopper (Eleven)", Customer2),
+            getSlideContent("Max Mayfield", Customer3),
+        ];
+
+        customerSlides.forEach((slide) => carousel.addSlide(slide));
+        carousel.moveToFirstSlide();
+
+        const content = `
+            <div class="customer__text">
+                <span class="customer__logo">${getLogoIcon()}</span>
+                <h2 class="customer__heading">Our Customers Say</h2>
+            </div>`;
+
+        this.customerSection.insertAdjacentHTML("beforeend", content);
+        this.customerSection.appendChild(carousel.render());
+        this.container.appendChild(this.customerSection);
     }
 
     /**
