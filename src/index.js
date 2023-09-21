@@ -3,6 +3,7 @@ import { AboutPage } from "./about";
 import { MenuPage } from "./menu";
 import { ContactPage } from "./contact";
 import { getNavigationBar, tabIDs } from "./navigation";
+import { Footer } from "./footer";
 import "./assets/styles.css";
 
 const container = document.getElementById("content");
@@ -24,6 +25,9 @@ const navigationBar = getNavigationBar();
 
 heroContainer.insertAdjacentElement("afterbegin", navigationBar);
 container.appendChild(defaultTab.render());
+
+const footer = new Footer();
+container.appendChild(footer.render());
 
 // Tab elements created by navigation bar function
 const homeTab = document.getElementById(tabIDs.home);
