@@ -63,7 +63,7 @@ export class HomePage {
             <div class="parlour__content">
                 <div class="parlour__text">
                     <span class="parlour__logo">${getLogoIcon()}</span>
-                    <h2 class="parlour__heading">Hawkin's Ice Cream Parlour</h2>
+                    <h2 class="parlour__heading">Hawkin's Best Ice Cream</h2>
                     <p class="parlour__paragraph">Rated as the #1 ice cream parlour in all of Hawkins, Indiana by The Hawkins Post.
                     Our in-house ice cream is made with American pride and features over 30 different toppings and sweet condiments.</p>
                 </div>
@@ -96,7 +96,7 @@ export class HomePage {
                     </h2>
                     <p class="discover__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis ex mauris. 
                     Nullam justo risus, pellentesque eu elementum ut, pretium ac orci. Ut eget nunc posuere neque commodo aliquam. 
-                    Vivamus commodo congue augue, at imperdiet justo ullamcorper vel.</p>
+                    Vivamus commodo congue augue.</p>
                     <button class="discover__button">View Full Menu</button>
                 </div>
                 <div class="gallery">

@@ -1,4 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
+
+@font-face {
+    font-family: "Bookman Swash";
+    src: url("./fonts/Bookman\ Swash\ Bold\ Italic.otf") format("opentype");
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Bookman";
+    src: url("./fonts/Bookman\ BoldItalic.ttf") format("truetype");
+    font-weight: 800;
+    font-style: italic;
+}
+
 html {
+    --color-blue-primary: #04759f;
+    --color-blue-secondary: #050f96;
+    --color-red-primary: #bc3d52;
+    --color-red-light: #e09fa9;
+    --color-grey-light: #f4f4f4;
+    --font-primary: "Source Sans 3", sans-serif;
+    --font-secondary: "Merriweather", serif;
     font-size: 62.5%;
 }
 
@@ -6,18 +29,69 @@ body {
     --section-padding-x: 5rem;
     margin: 0;
     font-size: 2rem;
+    font-family: var(--font-primary);
 }
 
 h1, h2, h3, h4 {
+    font-family: var(--font-secondary);
     margin: 0;
 }
 
 h2 {
     font-size: 4.5rem;
+    margin: 2.5rem 0;
 }
 
 figure {
     margin: 0;
+}
+
+button {
+    background-color: var(--color-blue-primary);
+    color: #FFF;
+    font: inherit;
+    border-radius: 3px;
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: padding 0.2s ease-in-out;
+}
+
+button:hover {
+    padding: 1rem 3rem;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: var(--color-blue-primary);
+}
+
+a:hover,
+a:active {
+    text-decoration: underline;
+}
+
+.logo {
+    font-family: "Bookman";
+    text-transform: uppercase;
+    text-shadow:
+        2px 2px 0 var(--color-red-primary),
+        -2px 2px 0 var(--color-red-primary),
+        -2px -2px 0 var(--color-red-primary),
+        2px -2px 0 var(--color-red-primary);
+    letter-spacing: -1px;
+}
+
+.logo-icon {
+    color: var(--color-red-primary);
+    font-size: 1.2em;
+    text-shadow: none;
+    margin: 0 1rem;
+}
+
+.logo__fancy-font {
+    font-family: "Bookman Swash";
 }
 
 .gallery__item img {
@@ -30,11 +104,10 @@ figure {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 0;
     margin: 0 auto;
     max-width: 120rem;
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: 2.2rem;
 }
 
 .navbar__list {
@@ -59,6 +132,7 @@ figure {
 
 .navbar__logo .logo-icon {
     display: block;
+    margin: 0;
 }
 
 .hero__container {
@@ -96,21 +170,25 @@ figure {
 
 .hero__text {
     text-align: center;
-    margin: 25vh auto;
-    max-width: max(50%, 600px);
+    margin: 20vh auto;
+    max-width: min(800px, 100%);
 }
 
 .hero__container h1 {
-    font-size: 7rem;
-    margin: 2rem 0;
+    font-size: 6rem;
+    margin: 1rem 0;
 }
 
 .hero__container h3 {
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 .hero__container p {
     font-size: 2rem;
+}
+
+.hero__button--cta {
+    background-color: var(--color-blue-secondary);
 }
 
 .parlour__container {
@@ -121,10 +199,6 @@ figure {
 .parlour__text {
     margin: 0 auto;
     max-width: 70rem;
-}
-
-.parlour__heading {
-    margin: 3rem 0;
 }
 
 .parlour__logo, .customer__logo {
@@ -173,12 +247,14 @@ figure {
 
 .discover__heading {
     font-size: 5rem;
+    margin: 0;
 }
 
 .discover__special {
     display: block;
     line-height: 0.6;
     font-size: 0.85em;
+    color: var(--color-blue-primary);
 }
 
 .discover__container .gallery {
@@ -214,10 +290,6 @@ figure {
     text-align: center;
 }
 
-.customer__heading {
-    margin: 3rem 0;
-}
-
 .carousel {
     position: relative;
     margin: 5rem auto;
@@ -225,7 +297,8 @@ figure {
 }
 
 .carousel__button {
-    border: none;
+    background-color: var(--color-grey-light);
+    color: #000;
     border-radius: 100%;
     cursor: pointer;
     position: absolute;
@@ -233,6 +306,12 @@ figure {
     width: 7rem;
     height: 7rem;
     font-size: 3rem;
+}
+
+.carousel__button:hover {
+    background-color: var(--color-blue-primary);
+    color: #FFF;
+    padding: initial;
 }
 
 .back {
@@ -259,6 +338,8 @@ figure {
 .slide__photo {
     width: 50%;
     height: 30rem;
+    border: 10px solid var(--color-blue-secondary);
+    border-radius: 50%;
     margin: 0 auto;
 }
 
@@ -285,17 +366,19 @@ figure {
     height: 2rem;
     width: 2rem;
     margin: 0 5px;
-    background-color: #ccc;
+    background-color: var(--color-red-light);
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
 }
 
 .dot--active, .dot:hover {
-    background-color: #777;
+    background-color: var(--color-red-primary);
 }
 
 .footer {
+    background-color: var(--color-grey-light);
+    position: relative;
     padding: 5rem var(--section-padding-x);
     text-align: center;
 }
@@ -303,6 +386,10 @@ figure {
 .footer p,
 .footer address {
     margin: 2rem 0;
+}
+
+.footer h4 {
+    font-size: 1.1em;
 }
 
 .footer__body {
@@ -322,12 +409,18 @@ figure {
 }
 
 .footer__social {
+    font-size: 1.4em;
     margin-top: 4rem;
 }
 
 .footer__social a {
     display: inline-block;
     margin-right: 1rem;
+}
+
+.footer__social a:hover,
+.footer__social a:active {
+    color: var(--color-red-primary);
 }
 
 .footer__contact address {

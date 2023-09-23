@@ -16,8 +16,8 @@ export const getLogoIcon = function () {
  */
 export const getCompanyLogo = function (blockName) {
     return `
-        <div class="${blockName}__logo">
-            Scoops ${getLogoIcon()} Ahoy
+        <div class="logo ${blockName}__logo">
+            <span class="logo__fancy-font">S</span>coo<span class="logo__fancy-font">ps</span>${getLogoIcon()}<span class="logo__fancy-font">Ah</span>o<span class="logo__fancy-font">y</span>
         </div>
     `;
 };
