@@ -27,6 +27,7 @@ html {
 
 body {
     --section-padding-x: 5rem;
+    position: relative;
     margin: 0;
     font-size: 2rem;
     font-family: var(--font-primary);
@@ -72,6 +73,10 @@ a:active {
     text-decoration: underline;
 }
 
+.hide {
+    display: none;
+}
+
 .logo {
     font-family: "Bookman";
     text-transform: uppercase;
@@ -110,6 +115,20 @@ a:active {
     font-size: 2.2rem;
 }
 
+.navbar__heading {
+    margin: 0;
+}
+
+.navbar__logo {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.navbar__logo .logo-icon {
+    display: block;
+    margin: 0;
+}
+
 .navbar__list {
     display: flex;
     list-style: none;
@@ -125,14 +144,45 @@ a:active {
     margin-right: 4rem;
 }
 
-.navbar__logo {
-    text-align: center;
-    font-size: 2rem;
+.navbar__menu-button,
+.navbar__close-button {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+    transition: none;
 }
 
-.navbar__logo .logo-icon {
-    display: block;
-    margin: 0;
+.navbar__menu-button:hover,
+.navbar__close-button:hover {
+    padding: 0;
+}
+
+.navbar__hamburger {
+    background-color: #FFF;
+    display: inline-block;
+    position: relative;
+    width: 3.5rem;
+    height: 0.5rem;
+    cursor: pointer;
+}
+
+.navbar__hamburger::before,
+.navbar__hamburger::after {
+    content: "";
+    background-color: inherit;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar__hamburger::before {
+    top: -10px;
+}
+
+.navbar__hamburger::after {
+    bottom: -10px;
 }
 
 .hero__container {
@@ -170,7 +220,7 @@ a:active {
 
 .hero__text {
     text-align: center;
-    margin: 20vh auto;
+    margin: 22vh auto;
     max-width: min(800px, 100%);
 }
 
@@ -181,10 +231,6 @@ a:active {
 
 .hero__container h3 {
     font-size: 4rem;
-}
-
-.hero__container p {
-    font-size: 2rem;
 }
 
 .hero__button--cta {
@@ -331,10 +377,6 @@ a:active {
     margin-bottom: 5rem;
 }
 
-.hide {
-    display: none;
-}
-
 .slide__photo {
     width: 50%;
     height: 30rem;
@@ -465,6 +507,49 @@ a:active {
     .discover__text {
         text-align: center;
         max-width: min(600px, 100%);
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .navbar__menu {
+        display: block;
+    }
+
+    .navbar__menu.active ~ .navbar__mobile {
+        background-color: rgba(0, 0, 0, 0.8);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+    }
+
+    .navbar__list {
+        flex-direction: column;
+        margin-bottom: 5rem;
+        text-align: center;
+    }
+
+    .navbar__item:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .navbar__buttons {
+        font-size: 2.2rem;
+    }
+
+    .navbar__close-button {
+        position: absolute;
+        top: 4.5rem;
+        right: 4.5rem;
+        font-size: 5rem;
     }
 }
 

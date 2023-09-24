@@ -2,7 +2,7 @@ import { HomePage } from "./home";
 import { AboutPage } from "./about";
 import { MenuPage } from "./menu";
 import { ContactPage } from "./contact";
-import { getNavigationBar, tabIDs } from "./navigation";
+import { collapseNavOnMobile, getNavigationBar, tabIDs } from "./navigation";
 import { Footer } from "./footer";
 import "./assets/styles.css";
 
@@ -25,6 +25,8 @@ const navigationBar = getNavigationBar();
 
 heroContainer.insertAdjacentElement("afterbegin", navigationBar);
 container.appendChild(defaultTab.render());
+
+collapseNavOnMobile();
 
 const footer = new Footer();
 container.appendChild(footer.render());
