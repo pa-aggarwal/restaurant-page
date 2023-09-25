@@ -2,12 +2,12 @@ import { getCompanyLogo } from "./logo";
 
 export class AboutPage {
     constructor() {
-        this.container = document.createElement("section");
+        this.container = document.createElement("div");
         this.container.id = "about";
         this.container.classList.add("about");
 
-        this.heroContainer = document.createElement("div");
-        this.heroContainer.classList.add("hero__container");
+        this.heroSection = document.createElement("section");
+        this.heroSection.classList.add("hero__container");
 
         this.addContent();
     }
@@ -20,8 +20,8 @@ export class AboutPage {
                 <h1>About Us</h1>
             </div>`;
 
-        this.heroContainer.insertAdjacentHTML("beforeend", heroContent);
-        this.container.appendChild(this.heroContainer);
+        this.heroSection.insertAdjacentHTML("beforeend", heroContent);
+        this.container.appendChild(this.heroSection);
     }
 
     /**
@@ -37,6 +37,6 @@ export class AboutPage {
      * @returns HTMLElement
      */
     getHeroContainer() {
-        return this.heroContainer;
+        return this.heroSection;
     }
 }
