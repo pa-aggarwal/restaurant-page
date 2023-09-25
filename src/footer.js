@@ -50,7 +50,7 @@ export class Footer {
                     </div>
                 </div>
             </div>
-            <p>Copyright &copy; 2023 All rights reserved | Made with ❤️ by <a href="https://github.com/pa-aggarwal">Priya Aggarwal</a></p>`;
+            <p class="footer__copyright">Copyright &copy; 2023 All rights reserved | Made with ❤️ by <a href="https://github.com/pa-aggarwal">Priya Aggarwal</a></p>`;
 
         this.container.insertAdjacentHTML("beforeend", content);
     }

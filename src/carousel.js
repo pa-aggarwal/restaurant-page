@@ -11,6 +11,8 @@ export class Carousel {
 
         this.backButton = document.createElement("button");
         this.nextButton = document.createElement("button");
+        this.backButton.type = "button";
+        this.nextButton.type = "button";
         this.backButton.classList.add("carousel__button", "back");
         this.nextButton.classList.add("carousel__button", "next");
 

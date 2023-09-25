@@ -31,7 +31,7 @@ export const getNavigationBar = function () {
                 </ul>
             </div>
             <div class="navbar__buttons">
-                <button type="button">Special Offers</button>
+                <button type="button" class="button button--primary">Special Offers</button>
             </div>
             <div class="navbar__menu hide">
                 <button type="button" class="navbar__menu-button">

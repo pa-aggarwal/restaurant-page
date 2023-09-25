@@ -29,8 +29,7 @@ body {
     --section-padding-x: 5rem;
     position: relative;
     margin: 0;
-    font-size: 2rem;
-    font-family: var(--font-primary);
+    font: 2rem var(--font-primary);
 }
 
 h1, h2, h3, h4 {
@@ -47,19 +46,36 @@ figure {
     margin: 0;
 }
 
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 button {
-    background-color: var(--color-blue-primary);
-    color: #FFF;
     font: inherit;
-    border-radius: 3px;
     border: none;
-    padding: 1rem 2rem;
     cursor: pointer;
+}
+
+.button {
+    border-radius: 3px;
+    padding: 1rem 2rem;
     transition: padding 0.2s ease-in-out;
 }
 
-button:hover {
+.button:hover {
     padding: 1rem 3rem;
+}
+
+.button--primary {
+    background-color: var(--color-blue-primary);
+    color: #FFF;
+}
+
+.button--secondary {
+    background-color: var(--color-blue-secondary);
+    color: #FFF;
 }
 
 a:link,
@@ -91,7 +107,6 @@ a:active {
 .logo-icon {
     color: var(--color-red-primary);
     font-size: 1.2em;
-    text-shadow: none;
     margin: 0 1rem;
 }
 
@@ -99,7 +114,7 @@ a:active {
     font-family: "Bookman Swash";
 }
 
-.gallery__item img {
+.image {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -126,14 +141,10 @@ a:active {
 
 .navbar__logo .logo-icon {
     display: block;
-    margin: 0;
 }
 
 .navbar__list {
     display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .navbar__item:hover {
@@ -147,14 +158,7 @@ a:active {
 .navbar__menu-button,
 .navbar__close-button {
     background-color: transparent;
-    border-radius: 0;
-    padding: 0;
-    transition: none;
-}
-
-.navbar__menu-button:hover,
-.navbar__close-button:hover {
-    padding: 0;
+    color: #FFF;
 }
 
 .navbar__hamburger {
@@ -163,7 +167,6 @@ a:active {
     position: relative;
     width: 3.5rem;
     height: 0.5rem;
-    cursor: pointer;
 }
 
 .navbar__hamburger::before,
@@ -188,7 +191,7 @@ a:active {
 .hero__container {
     background-repeat: no-repeat;
     background-size: cover;
-    color: white;
+    color: #FFF;
     padding: 3rem var(--section-padding-x);
 }
 
@@ -203,6 +206,7 @@ a:active {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url("../images/staff-01.jpg");
+    background-position: center;
 }
 
 .menu .hero__container {
@@ -233,10 +237,6 @@ a:active {
     font-size: 4rem;
 }
 
-.hero__button--cta {
-    background-color: var(--color-blue-secondary);
-}
-
 .parlour__container {
     padding: 15rem var(--section-padding-x);
     text-align: center;
@@ -255,7 +255,6 @@ a:active {
     display: grid;
     grid-template-rows: repeat(2, auto);
     grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
     gap: 3rem;
     margin: 5rem auto;
     max-width: 140rem;
@@ -278,6 +277,7 @@ a:active {
 }
 
 .discover__content {
+    --gallery-padding-x: 2rem;
     background-color: rgba(255, 255, 255, 0.85);
     display: flex;
     align-items: center;
@@ -305,30 +305,13 @@ a:active {
 
 .discover__container .gallery {
     display: flex;
-    gap: 2rem;
-    position: relative;
+    flex-wrap: wrap;
+    gap: var(--gallery-padding-x);
     max-width: 57rem;
 }
 
-.discover__container .gallery__column {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    gap: 3rem;
-}
-
-.discover__container .gallery__column:nth-child(1) {
-    position: relative;
-    bottom: 20px;
-}
-
-.discover__container .gallery__column:nth-child(2) {
-    position: relative;
-    top: 20px;
-}
-
 .discover__container .gallery__item {
-    height: 50%;
+    flex: 1 max(275px, 40%);
 }
 
 .customer__container {
@@ -337,6 +320,7 @@ a:active {
 }
 
 .carousel {
+    --carousel-border-radius: 100%;
     position: relative;
     margin: 5rem auto;
     max-width: 70rem;
@@ -345,8 +329,7 @@ a:active {
 .carousel__button {
     background-color: var(--color-grey-light);
     color: #000;
-    border-radius: 100%;
-    cursor: pointer;
+    border-radius: var(--carousel-border-radius);
     position: absolute;
     top: 35%;
     width: 7rem;
@@ -357,7 +340,6 @@ a:active {
 .carousel__button:hover {
     background-color: var(--color-blue-primary);
     color: #FFF;
-    padding: initial;
 }
 
 .back {
@@ -369,7 +351,8 @@ a:active {
 }
 
 .slider {
-    margin: 0 5rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .slide {
@@ -378,21 +361,18 @@ a:active {
 }
 
 .slide__photo {
-    width: 50%;
+    width: 30rem;
     height: 30rem;
     border: 10px solid var(--color-blue-secondary);
-    border-radius: 50%;
+    border-radius: var(--carousel-border-radius);
     margin: 0 auto;
 }
 
 .slide__photo img {
-    border-radius: 100%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    border-radius: var(--carousel-border-radius);
 }
 
-.slide__title::before {
+.slide__customer::before {
     content: "\2014";
     font-weight: bold;
     font-size: 2.5rem;
@@ -404,14 +384,14 @@ a:active {
 }
 
 .dot {
-    cursor: pointer;
-    height: 2rem;
-    width: 2rem;
-    margin: 0 5px;
     background-color: var(--color-red-light);
-    border-radius: 50%;
     display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 5px;
+    border-radius: var(--carousel-border-radius);
     transition: background-color 0.6s ease;
+    cursor: pointer;
 }
 
 .dot--active, .dot:hover {
@@ -422,7 +402,6 @@ a:active {
     background-color: var(--color-grey-light);
     position: relative;
     padding: 5rem var(--section-padding-x);
-    text-align: center;
 }
 
 .footer p,
@@ -436,14 +415,14 @@ a:active {
 
 .footer__body {
     display: flex;
+    flex-wrap: wrap;
     gap: 5rem;
     margin: 0 auto 5rem;
     max-width: 1000px;
-    text-align: left;
 }
 
 .footer__column {
-    flex: 1 30%;
+    flex: 1 max(275px, 30%);
 }
 
 .footer__column--small {
@@ -470,14 +449,15 @@ a:active {
 }
 
 .footer__links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     margin-top: 2rem;
 }
 
 .footer__links li {
     margin-bottom: 1rem;
+}
+
+.footer__copyright {
+    text-align: center;
 }
 
 @media screen and (max-width: 1300px) {
@@ -490,8 +470,7 @@ a:active {
 
     .parlour__container .gallery__item:nth-child(1),
     .parlour__container .gallery__item:nth-child(4) {
-        grid-row: auto;
-        grid-column: auto;
+        grid-area: auto;
     }
 
     .parlour__container .gallery__item:nth-child(3) {
@@ -499,22 +478,19 @@ a:active {
     }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1200px) {
     .discover__content {
         flex-direction: column;
+        padding: 6rem max(var(--gallery-padding-x), 5%);
+        max-width: 600px;
     }
 
     .discover__text {
         text-align: center;
-        max-width: min(600px, 100%);
     }
 }
 
 @media screen and (max-width: 950px) {
-    .navbar__menu {
-        display: block;
-    }
-
     .navbar__menu.active ~ .navbar__mobile {
         background-color: rgba(0, 0, 0, 0.8);
         position: fixed;
@@ -537,8 +513,7 @@ a:active {
     }
 
     .navbar__item:not(:last-child) {
-        margin-right: 0;
-        margin-bottom: 2rem;
+        margin: 0 0 2rem 0;
     }
 
     .navbar__buttons {
@@ -551,10 +526,14 @@ a:active {
         right: 4.5rem;
         font-size: 5rem;
     }
+
+    .carousel__button {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 700px) {
-    .footer__body {
-        flex-direction: column;
+    body {
+        --section-padding-x: 2.5rem;
     }
 }

@@ -49,8 +49,8 @@ export class HomePage {
                 <h1 class="hero__heading">${companyLogo}</h1>
                 <p>${this.heroText}</p>
                 <div class="hero__buttons">
-                    <button class="hero__button hero__button--cta">View Menu</button>
-                    <button class="hero__button">Special Offers</button>
+                    <button type="button" class="button button--primary">View Menu</button>
+                    <button type="button" class="button button--secondary">Special Offers</button>
                 </div>
             </div>`;
 
@@ -69,16 +69,16 @@ export class HomePage {
                 </div>
                 <div class="gallery">
                     <figure class="gallery__item">
-                        <img src="${IceCream1}" alt="Ice cream with chocolate and nuts">
+                        <img class="image" src="${IceCream1}" alt="Ice cream with chocolate and nuts">
                     </figure>
                     <figure class="gallery__item">
-                        <img src="${IceCream2}" alt="Banana Split">
+                        <img class="image" src="${IceCream2}" alt="Banana Split">
                     </figure>
                     <figure class="gallery__item">
-                        <img src="${IceCream3}" alt="Ice cream with donuts and M&M's">
+                        <img class="image" src="${IceCream3}" alt="Ice cream with donuts and M&M's">
                     </figure>
                     <figure class="gallery__item">
-                        <img src="${IceCream4}" alt="Ice cream in a waffle cone">
+                        <img class="image" src="${IceCream4}" alt="Ice cream in a waffle cone">
                     </figure>
                 </div>
             </div>`;
@@ -97,25 +97,21 @@ export class HomePage {
                     <p class="discover__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis ex mauris. 
                     Nullam justo risus, pellentesque eu elementum ut, pretium ac orci. Ut eget nunc posuere neque commodo aliquam. 
                     Vivamus commodo congue augue.</p>
-                    <button class="discover__button">View Full Menu</button>
+                    <button type="button" class="button button--primary">View Full Menu</button>
                 </div>
                 <div class="gallery">
-                    <div class="gallery__column">
-                        <figure class="gallery__item">
-                            <img src="${IceCream5}" alt="Ice cream scoop">
-                        </figure>
-                        <figure class="gallery__item">
-                            <img src="${IceCream6}" alt="Ice cream with waffle inside cup">
-                        </figure>
-                    </div>
-                    <div class="gallery__column">
-                        <figure class="gallery__item">
-                            <img src="${IceCream7}" alt="Ice cream with American flag and decorations">
-                        </figure>
-                        <figure class="gallery__item">
-                            <img src="${IceCream8}" alt="Demogorgan-inspired strawberry ice cream">
-                        </figure>
-                    </div>
+                    <figure class="gallery__item">
+                        <img class="image" src="${IceCream5}" alt="Ice cream scoop">
+                    </figure>
+                    <figure class="gallery__item">
+                        <img class="image" src="${IceCream6}" alt="Ice cream with waffle inside cup">
+                    </figure>
+                    <figure class="gallery__item">
+                        <img class="image" src="${IceCream7}" alt="Ice cream with American flag and decorations">
+                    </figure>
+                    <figure class="gallery__item">
+                        <img class="image" src="${IceCream8}" alt="Demogorgan-inspired strawberry ice cream">
+                    </figure>
                 </div>
             </div>`;
 
@@ -130,14 +126,14 @@ export class HomePage {
         function getSlideContent(slideTitle, slideImage) {
             return `
                 <div class="${blockName}__photo">
-                    <img src="${slideImage}" alt="Scoops Ahoy customer">
+                    <img class="image" src="${slideImage}" alt="Scoops Ahoy customer">
                 </div>
                 <div class="${blockName}__text">
                     <blockquote class="${blockName}__quote">
                         <p>I have been visiting Scoops Ahoy for over a year now and I love it! I can't imagine life without
                         their amazing ice cream. It's the best, and the customer service is great.</p>
                     </blockquote>
-                    <span class="${blockName}__title">${slideTitle}</span>
+                    <span class="${blockName}__customer">${slideTitle}</span>
                 </div>`;
         }
 
