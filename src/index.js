@@ -2,8 +2,13 @@ import { HomePage } from "./home";
 import { AboutPage } from "./about";
 import { MenuPage } from "./menu";
 import { ContactPage } from "./contact";
-import { collapseNavOnMobile, getNavigationBar, tabIDs } from "./navigation";
 import { Footer } from "./footer";
+import {
+    animateNavigationBarOnScroll,
+    collapseNavOnMobile,
+    getNavigationBar,
+    tabIDs,
+} from "./navigation";
 import "./assets/styles.css";
 
 const container = document.getElementById("content");
@@ -20,13 +25,13 @@ tabPages[tabIDs.menu] = new MenuPage();
 tabPages[tabIDs.contact] = new ContactPage();
 
 const defaultTab = tabPages[tabIDs.home];
-const heroContainer = defaultTab.getHeroContainer();
 const navigationBar = getNavigationBar();
 
-heroContainer.insertAdjacentElement("afterbegin", navigationBar);
+container.appendChild(navigationBar);
 container.appendChild(defaultTab.render());
 
 collapseNavOnMobile();
+animateNavigationBarOnScroll();
 
 const footer = new Footer();
 container.appendChild(footer.render());
@@ -39,9 +44,8 @@ const contactTab = document.getElementById(tabIDs.contact);
 
 function switchTab() {
     const newTabContainer = tabPages[this.id].render();
-    const heroContainer = tabPages[this.id].getHeroContainer();
-    heroContainer.insertAdjacentElement("afterbegin", navigationBar);
-    container.replaceChild(newTabContainer, container.firstChild);
+    const oldTabContainer = container.firstChild.nextSibling;
+    container.replaceChild(newTabContainer, oldTabContainer);
 }
 
 homeTab.addEventListener("click", switchTab);

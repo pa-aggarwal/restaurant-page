@@ -85,3 +85,33 @@ export const collapseNavOnMobile = function () {
     menuButton.addEventListener("click", toggleMenu);
     closeButton.addEventListener("click", toggleMenu);
 };
+
+/**
+ * Add animation styles to the navigation bar when the scroll event
+ * fires on the window object.
+ */
+export const animateNavigationBarOnScroll = function () {
+    const navbarContainer = document.querySelector(".navbar-container");
+    const threshold = 10;
+    let scrolling = false;
+
+    function scrollHandler() {
+        if (!scrolling) {
+            return;
+        }
+
+        const scrollPositionY = Math.round(this.scrollY);
+        if (scrollPositionY >= threshold) {
+            navbarContainer.classList.add("navbar-container--scrolled");
+        } else {
+            navbarContainer.classList.remove("navbar-container--scrolled");
+        }
+    }
+
+    window.addEventListener("scroll", () => {
+        scrolling = true;
+    });
+
+    // Use throttling for expensive dom manipulation operations
+    window.setInterval(scrollHandler, 100);
+};
