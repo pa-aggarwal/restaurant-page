@@ -2,6 +2,8 @@ import { getCompanyLogo } from "./logo";
 import "@fortawesome/fontawesome-free/js/solid";
 import "@fortawesome/fontawesome-free/js/fontawesome";
 
+const inTabletMode = () => window.innerWidth <= 950;
+
 export const tabIDs = {
     home: "home-tab",
     about: "about-tab",
@@ -47,11 +49,24 @@ export const getNavigationBar = function () {
 };
 
 /**
- * Hide navigation bar links and buttons in mobile mode (<950px)
- * and show when hamburger menu is clicked by the user.
+ * Show or hide the navigation menu in tablet mode.
+ */
+export const toggleMenu = function () {
+    if (!inTabletMode()) {
+        return;
+    }
+    const mobileNavbar = document.querySelector(".navbar__mobile");
+    const navbarMenu = document.querySelector(".navbar__menu");
+    mobileNavbar.classList.toggle("hide");
+    navbarMenu.classList.toggle("active");
+};
+
+/**
+ * Hide navigation bar links and buttons in tablet mode and show
+ * when the hamburger menu is clicked by the user.
  */
 export const collapseNavOnMobile = function () {
-    if (window.innerWidth > 950) {
+    if (!inTabletMode()) {
         return;
     }
 
@@ -75,11 +90,6 @@ export const collapseNavOnMobile = function () {
 
     const navbarMenu = document.querySelector(".navbar__menu");
     navbarMenu.classList.remove("hide");
-
-    function toggleMenu() {
-        mobileNavbar.classList.toggle("hide");
-        navbarMenu.classList.toggle("active");
-    }
 
     const menuButton = document.querySelector(".navbar__menu-button");
     menuButton.addEventListener("click", toggleMenu);

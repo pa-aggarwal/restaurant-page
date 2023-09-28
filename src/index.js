@@ -7,6 +7,7 @@ import {
     animateNavigationBarOnScroll,
     collapseNavOnMobile,
     getNavigationBar,
+    toggleMenu,
     tabIDs,
 } from "./navigation";
 import "./assets/styles.css";
@@ -46,6 +47,8 @@ function switchTab() {
     const newTabContainer = tabPages[this.id].render();
     const oldTabContainer = container.firstChild.nextSibling;
     container.replaceChild(newTabContainer, oldTabContainer);
+    window.scrollTo(0, 0);
+    toggleMenu();
 }
 
 homeTab.addEventListener("click", switchTab);

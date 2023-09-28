@@ -270,7 +270,9 @@ a:active {
     max-width: 70rem;
 }
 
-.parlour__logo, .customer__logo {
+.parlour__logo,
+.customer__logo,
+.menu__logo {
     font-size: 3rem;
 }
 
@@ -406,6 +408,21 @@ a:active {
     margin: 4rem 2.5rem 2rem;
 }
 
+.slide__quote p::before,
+.slide__quote p::after {
+    color: var(--color-red-primary);
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.slide__quote p::before {
+    content: "\201C";
+}
+
+.slide__quote p::after {
+    content: "\201D";
+}
+
 .dot {
     background-color: var(--color-red-light);
     display: inline-block;
@@ -419,6 +436,89 @@ a:active {
 
 .dot--active, .dot:hover {
     background-color: var(--color-red-primary);
+}
+
+.menu__container {
+    padding: 10rem var(--section-padding-x) 15rem;
+}
+
+.menu__text {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 80rem;
+}
+
+.menu__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--section-padding-x);
+    margin: 5rem auto 0;
+    max-width: 130rem;
+}
+
+.card {
+    --highlight-color: var(--color-red-primary);
+    background-color: var(--color-grey-light);
+    transition: all 0.2s ease-in;
+}
+
+.card__image-wrapper {
+    height: 40rem;
+    overflow: hidden;
+}
+
+.card__image {
+    transition: transform 0.4s ease-out;
+}
+
+.card__text {
+    padding: 8%;
+}
+
+.card__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__heading {
+    font-size: 2rem;
+    letter-spacing: -1px;
+    max-width: 80%;
+}
+
+.card__price {
+    color: var(--highlight-color);
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.card__price::before {
+    content: "\0024";
+    display: inline-block;
+    margin-right: 1px;
+}
+
+.card__description {
+    margin: 1rem 0;
+}
+
+.card:hover {
+    background-color: var(--highlight-color);
+    color: var(--color-grey-light);
+}
+
+.card:hover .card__image {
+    transform: scale(1.3);
+}
+
+.card:hover .card__heading,
+.card:hover .card__price {
+    color: #FFF;
+}
+
+.card:hover .card__description {
+    color: inherit;
 }
 
 .footer {
