@@ -64,7 +64,7 @@ export class HomePage {
                 <div class="parlour__text">
                     <span class="parlour__logo">${getLogoIcon()}</span>
                     <h2 class="parlour__heading">Hawkin's Best Ice Cream</h2>
-                    <p class="parlour__paragraph">Rated as the #1 ice cream parlour in all of Hawkins, Indiana by The Hawkins Post.
+                    <p class="parlour__paragraph light-text">Rated as the #1 ice cream parlour in all of Hawkins, Indiana by The Hawkins Post.
                     Our in-house ice cream is made with American pride and features over 30 different toppings and sweet condiments.</p>
                 </div>
                 <div class="gallery">
@@ -94,8 +94,8 @@ export class HomePage {
                     <h2 class="discover__heading">
                         <span class="discover__special">Discover </span>Our Menu
                     </h2>
-                    <p class="discover__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis ex mauris. 
-                    Nullam justo risus, pellentesque eu elementum ut, pretium ac orci. Ut eget nunc posuere neque commodo aliquam. 
+                    <p class="discover__paragraph light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis ex mauris.
+                    Nullam justo risus, pellentesque eu elementum ut, pretium ac orci. Ut eget nunc posuere neque commodo aliquam.
                     Vivamus commodo congue augue.</p>
                     <button type="button" class="button button--primary">View Full Menu</button>
                 </div>
@@ -130,7 +130,7 @@ export class HomePage {
                 </div>
                 <div class="${blockName}__text">
                     <blockquote class="${blockName}__quote">
-                        <p>I have been visiting Scoops Ahoy for over a year now and I love it! I can't imagine life without
+                        <p class="light-text">I have been visiting Scoops Ahoy for over a year now and I love it! I can't imagine life without
                         their amazing ice cream. It's the best, and the customer service is great.</p>
                     </blockquote>
                     <span class="${blockName}__customer">${slideTitle}</span>
@@ -163,13 +163,5 @@ export class HomePage {
      */
     render() {
         return this.container;
-    }
-
-    /**
-     * Return the container for this page's hero section.
-     * @returns HTMLElement
-     */
-    getHeroContainer() {
-        return this.heroSection;
     }
 }

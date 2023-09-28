@@ -31,12 +31,4 @@ export class ContactPage {
     render() {
         return this.container;
     }
-
-    /**
-     * Return the container for this page's hero section.
-     * @returns HTMLElement
-     */
-    getHeroContainer() {
-        return this.heroSection;
-    }
 }
